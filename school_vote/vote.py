@@ -11,7 +11,10 @@ sys.setdefaultencoding('utf-8')
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36'}
 
 # sid = 'B11041504'
-
+'''
+stuid: student number
+pwd: student passwd
+'''
 def login(stuid, pwd):
     url1 = 'http://vote.onepedia.cn/index.php'
     postdata = {
@@ -28,7 +31,7 @@ def publish(sid):
     url1 = 'http://vote.onepedia.cn/votes.php'
     postdata = {
         'sid': sid,
-        'vcount[]': 20, #
+        'vcount[]': 20, # 要投的人ID，审查元素可获得！！
         'submit:': '确 定 投 票', #
     }
     req1 = urllib2.Request(url1, urllib.urlencode(postdata), headers=HEADERS)

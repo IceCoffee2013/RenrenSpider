@@ -10,7 +10,7 @@ fname = 'file.xls'
 bk = xlrd.open_workbook(fname)
 shxrange = range(bk.nsheets)
 try:
-    sh = bk.sheet_by_name("在校本科生和专科生名单")
+    sh = bk.sheet_by_name("在校本科生和专科生名单")  # 获取sheet
 except:
     print "no sheet in %s named Sheet1" % fname
 #获取行数
@@ -19,7 +19,7 @@ nrows = sh.nrows
 ncols = sh.ncols
 print "nrows %d, ncols %d" % (nrows,ncols)
 #获取第一行第一列数据
-for row_num in range(10130, 10230):
+for row_num in range(10130, 10230): # 刷票范围
     s_num = sh.cell_value(row_num, 0)
     id_num = sh.cell_value(row_num, 1)[-6:]
     try:
